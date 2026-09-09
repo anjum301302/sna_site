@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syada Nishat Anjum — Resume</title>
+<style>
+  :root{
+    --ink:#20313a;
+    --sub:#5b7079;
+    --line:#d9e3e6;
+    --accent:#2f6f6b;
+    --accent-soft:#eaf3f2;
+    --bg:#ffffff;
+    --panel:#f7fafa;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e9edee;
+    font-family:'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    width:210mm;
+    min-height:297mm;
+    margin:16px auto;
+    background:var(--bg);
+    box-shadow:0 4px 24px rgba(0,0,0,0.12);
+    padding:15mm 14mm;
+  }
+  .header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:2px solid var(--accent);
+    padding-bottom:14px;
+    margin-bottom:16px;
+    gap:20px;
+  }
+  .name{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:0.2px;
+    color:var(--ink);
+    margin:0;
+  }
+  .title{
+    font-size:13px;
+    color:var(--accent);
+    font-weight:600;
+    margin:3px 0 8px 0;
+  }
+  .summary{
+    font-size:11.3px;
+    color:var(--sub);
+    line-height:1.5;
+    max-width:400px;
+  }
+  .contact{
+    font-size:10.8px;
+    color:var(--sub);
+    text-align:right;
+    line-height:1.9;
+    white-space:nowrap;
+  }
+  .contact a{color:var(--sub); text-decoration:none;}
+  .contact-row{display:flex; align-items:center; justify-content:flex-end; gap:6px;}
+  .icon{width:12px; height:12px; flex-shrink:0; fill:none; stroke:var(--accent); stroke-width:1.8;}
+
+  .layout{
+    display:grid;
+    grid-template-columns:1fr 210px;
+    gap:26px;
+  }
+  h2.section{
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    margin:0 0 10px 0;
+    padding-bottom:5px;
+    border-bottom:1px solid var(--line);
+  }
+  section{margin-bottom:18px;}
+
+  .entry{margin-bottom:13px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+  }
+  .role{font-size:12.3px; font-weight:700; color:var(--ink);}
+  .org{font-size:11px; font-weight:600; color:var(--accent);}
+  .dates{font-size:10.3px; color:var(--sub); white-space:nowrap; font-weight:600;}
+  .tag-new{
+    display:inline-block;
+    font-size:9px;
+    font-weight:700;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border:1px solid var(--accent);
+    border-radius:3px;
+    padding:1px 6px;
+    margin-left:7px;
+    letter-spacing:0.3px;
+    vertical-align:middle;
+  }
+  ul.bullets{
+    margin:5px 0 0 0;
+    padding-left:15px;
+    font-size:10.8px;
+    line-height:1.55;
+    color:var(--ink);
+  }
+  ul.bullets li{margin-bottom:2px;}
+
+  .sidebar h2.section{margin-top:0;}
+  .skill-group{margin-bottom:12px;}
+  .skill-group-title{
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:5px;
+  }
+  .pill-wrap{display:flex; flex-wrap:wrap; gap:5px;}
+  .pill{
+    font-size:9.3px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:3px 7px;
+    border-radius:3px;
+  }
+  .edu-entry{margin-bottom:10px;}
+  .edu-degree{font-size:10.8px; font-weight:700; color:var(--ink);}
+  .edu-school{font-size:9.8px; color:var(--sub);}
+  .edu-meta{font-size:9.3px; color:var(--sub);}
+
+  .cert-list{list-style:none; margin:0; padding:0; font-size:9.8px;}
+  .cert-list li{
+    display:flex; justify-content:space-between; gap:6px;
+    padding:5px 0; border-bottom:1px dashed var(--line);
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-name{color:var(--ink); font-weight:600;}
+  .cert-org{color:var(--sub);}
+  .cert-year{color:var(--sub); white-space:nowrap;}
+
+  .project-list{margin:0; padding-left:15px; font-size:10.8px; line-height:1.55;}
+  .project-list li{margin-bottom:3px;}
+
+  .interests{display:flex; gap:16px; flex-wrap:wrap;}
+  .interest{display:flex; align-items:center; gap:6px; font-size:10.3px; color:var(--sub);}
+  .interest .icon{stroke:var(--accent); width:13px; height:13px;}
+
+  @media print{
+    body{background:none;}
+    .page{box-shadow:none; margin:0; width:auto; min-height:auto;}
+    @page{size:A4; margin:0;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <p class="name">Syada Nishat Anjum</p>
+      <p class="title">Executive Officer — Software Analyst, In-House Development</p>
+      <p class="summary">Analyst and front-end developer specializing in core banking system (CBS) integrations, online banking operations, and cross-platform data exchange. Experienced in translating business requirements into technical specifications, coordinating architecture reviews, and delivering under pressure without compromising accuracy.</p>
+    </div>
+    <div class="contact">
+      <div class="contact-row"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8.1 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2.1z"/></svg><span>01785865205</span></div>
+      <div class="contact-row"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M22 6 12 13 2 6"/></svg><a href="mailto:anjum301302@gmail.com">anjum301302@gmail.com</a></div>
+      <div class="contact-row"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg><a href="#">syada-nishat-anjum-Portfolio</a></div>
+      <div class="contact-row"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9h4v2a4 4 0 0 1 8 3v8h-4v-7a2 2 0 0 0-4 0v7h-4z"/></svg><a href="#">syada-nishat-anjum</a></div>
+      <div class="contact-row"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><a href="#">nishatanjum19</a></div>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div class="main">
+
+      <section>
+        <h2 class="section">Work Experience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="role">Executive Officer</span><span class="tag-new">Promoted Jul 2026</span><div class="org">Software Analyst, In-House Development — Al-Arafah Islami Bank PLC</div></div>
+            <div class="dates">Jul 2026 – Present</div>
+          </div>
+          <ul class="bullets">
+            <li>Promoted from ICT Officer in recognition of performance on CBS-integrated application development and cross-functional coordination.</li>
+            <li>Lead front-end development using JavaScript and CSS frameworks (Tailwind, Bootstrap) for internal and CBS-linked applications.</li>
+            <li>Coordinate with project management on delivery scope, timelines, and release readiness.</li>
+            <li>Contribute to system architecture decisions for new integrations and in-house applications.</li>
+            <li>Collaborate on database design and schema planning with the DBA/backend team.</li>
+            <li>Build and optimize SQL queries — functions, Common Table Expressions (CTEs), and multi-table joins — for reporting and integration logic.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="role">ICT Officer</span><div class="org">Software Analyst, In-House Development — Al-Arafah Islami Bank PLC</div></div>
+            <div class="dates">May 2025 – Jun 2026</div>
+          </div>
+          <ul class="bullets">
+            <li>Executed system analysis and validation to ensure compliance with solution architecture and security policies.</li>
+            <li>Contributed to front-end development for applications integrated with the core banking system (CBS).</li>
+            <li>Handled data mapping and API payload analysis (JSON/XML) for seamless cross-platform communication.</li>
+            <li>Managed the end-to-end integration lifecycle — technical documentation, interface specifications, front-end design, and architecture review coordination.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="role">Operations &amp; Integration Analyst — I-Banking</span><div class="org">Al-Arafah Islami Bank PLC</div></div>
+            <div class="dates">May 2022 – May 2025</div>
+          </div>
+          <ul class="bullets">
+            <li>Led online banking operations and automation initiatives.</li>
+            <li>Designed and executed SQL-based MIS and reporting systems.</li>
+            <li>Coordinated system integrations with external partners (e.g., bKash, NPSB).</li>
+            <li>Provided IT support, technical documentation, and system testing.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="role">Assessor (Contractual)</span><div class="org">National Skills Development Authority (NSDA)</div></div>
+            <div class="dates">2025</div>
+          </div>
+          <ul class="bullets">
+            <li>Conducted competency assessments aligned with national standards for Computer Operation and Beautification.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section">Projects</h2>
+        <ul class="project-list">
+          <li>Co-led complete bKash payment integration into the AIBL system.</li>
+          <li>Contributed to CBS migration, covering notification and ADC services.</li>
+          <li>Developed a credit card eligibility and risk management system.</li>
+          <li>Coordinated development of in-house applications end-to-end.</li>
+          <li>Led case study and redesign of the Amar Adalat platform.</li>
+          <li>Led case study and redesign of the AIBL Internet Banking app.</li>
+          <li>Developed the Cash Collection Monitoring Portal for AIBPLC.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section">Education</h2>
+        <div class="edu-entry">
+          <div class="edu-degree">Post Graduate Diploma in IT</div>
+          <div class="edu-school">University of Dhaka</div>
+          <div class="edu-meta">2025 · Result Appeared</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">Master of Pharmacy</div>
+          <div class="edu-school">Daffodil International University</div>
+          <div class="edu-meta">2021 · GPA 3.69/4</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">Bachelor of Pharmacy</div>
+          <div class="edu-school">Daffodil International University</div>
+          <div class="edu-meta">2019 · GPA 3.60/4</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">Higher Secondary School Certificate</div>
+          <div class="edu-school">College of Development Alternatives</div>
+          <div class="edu-meta">2014 · GPA 4.80/5</div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-degree">Secondary School Certificate</div>
+          <div class="edu-school">Bangladesh Gas Field School &amp; College</div>
+          <div class="edu-meta">2012 · GPA 4.88/5</div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="sidebar">
+      <section>
+        <h2 class="section">Core Skills</h2>
+        <div class="skill-group">
+          <div class="skill-group-title">Front-End Development</div>
+          <div class="pill-wrap">
+            <span class="pill">JavaScript</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Tailwind</span><span class="pill">Bootstrap</span><span class="pill">React</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Databases &amp; SQL</div>
+          <div class="pill-wrap">
+            <span class="pill">Oracle</span><span class="pill">SQL Developer</span><span class="pill">MySQL</span><span class="pill">Functions</span><span class="pill">CTEs</span><span class="pill">Joins</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Data &amp; Reporting</div>
+          <div class="pill-wrap">
+            <span class="pill">Excel</span><span class="pill">Power BI</span><span class="pill">Python</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Tools &amp; SDLC</div>
+          <div class="pill-wrap">
+            <span class="pill">Oracle APEX</span><span class="pill">PHP</span><span class="pill">Postman</span><span class="pill">VS Code</span><span class="pill">Apache</span><span class="pill">Git/JIRA</span><span class="pill">WinSCP</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Design</div>
+          <div class="pill-wrap">
+            <span class="pill">Figma</span><span class="pill">Canva</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Professional Skills</div>
+          <div class="pill-wrap">
+            <span class="pill">System Architecture</span><span class="pill">DB Design</span><span class="pill">Project Coordination</span><span class="pill">Problem Solving</span><span class="pill">Communication</span><span class="pill">Leadership</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section">Certifications</h2>
+        <ul class="cert-list">
+          <li><div><div class="cert-name">Certified in Data Analytics</div><div class="cert-org">Cisco</div></div><div class="cert-year">2026</div></li>
+          <li><div><div class="cert-name">Certified Product Analyst</div><div class="cert-org">Pendo.io</div></div><div class="cert-year">2025</div></li>
+          <li><div><div class="cert-name">UI/UX Design</div><div class="cert-org">OSTAD</div></div><div class="cert-year">2025</div></li>
+          <li><div><div class="cert-name">Competency-Based Assessment, L4</div><div class="cert-org">NSDA</div></div><div class="cert-year">2025</div></li>
+          <li><div><div class="cert-name">Oracle DBA 19c</div><div class="cert-org">BITM · PeopleNTech</div></div><div class="cert-year">2024</div></li>
+          <li><div><div class="cert-name">Technical Support Fundamentals</div><div class="cert-org">Google</div></div><div class="cert-year">2023</div></li>
+          <li><div><div class="cert-name">Introduction to AI</div><div class="cert-org">IBM</div></div><div class="cert-year">2022</div></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section">Interests</h2>
+        <div class="interests">
+          <div class="interest"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12L3 7l9-5 9 5-9 5z"/></svg>Design</div>
+          <div class="interest"><svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>Analysis</div>
+          <div class="interest"><svg class="icon" viewBox="0 0 24 24"><path d="M2 16l20-8-8 20-3-9-9-3z"/></svg>Travel</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
